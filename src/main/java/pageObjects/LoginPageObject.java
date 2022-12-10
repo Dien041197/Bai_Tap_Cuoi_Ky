@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import common.BasePage;
 import pageUIs.LoginPageUIs;
 
-public class loginPageObjects extends BasePage {
+public class LoginPageObject extends BasePage {
 	WebDriver driver;
 	
 	// constructor
-	public loginPageObjects(WebDriver driver) {
+	public LoginPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 	

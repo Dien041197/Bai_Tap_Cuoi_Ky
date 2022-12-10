@@ -8,12 +8,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.loginPageObjects;
+import pageObjects.LoginPageObject;
 
 public class TS_02_login {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
-	loginPageObjects loginPage;
+	LoginPageObject loginPage;
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -23,7 +23,7 @@ public class TS_02_login {
 		driver.get(url);
 		driver.manage().window().maximize();
 		
-		loginPage = new loginPageObjects(driver);
+		loginPage = new LoginPageObject(driver);
 	}
 	
 	@Test
