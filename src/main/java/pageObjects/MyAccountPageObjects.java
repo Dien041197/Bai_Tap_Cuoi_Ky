@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
 import pageUIs.MyAccountPageUIs;
-
 public class MyAccountPageObjects extends BasePage {
 	WebDriver driver;
 	public MyAccountPageObjects(WebDriver driver) {
@@ -61,34 +60,37 @@ public class MyAccountPageObjects extends BasePage {
 		clickToElement(driver, MyAccountPageUIs.ADD_ADDRESSES_BUTTON);
 	}
 	public void inputToAddressesFirstnameTextbox(String Firstname) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Firstname);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_FIRST_NAME_TEXTBOX, Firstname);
 	}	
 	public void inputToAddressesLastnameTextbox(String Lastname) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Lastname);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_FIRST_NAME_TEXTBOX, Lastname);
 	}	
 	public void inputToAddressesEmailTextbox(String Email) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Email);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_EMAL_TEXTBOX, Email);
 	}	
 	public void inputToAddressesCompanyTextbox(String Company) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Company);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_COMPANY_NAME_TEXTBOX, Company);
 	}	
 	public void inputToAddressesCityTextbox(String City) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, City);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_CITY_TEXTBOX, City);
 	}	
-	public void inputToAddressesAddressesAddress1Textbox(String Address1) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Address1);
+	public void inputToAddressesAddress1Textbox(String Address1) {
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_ADDRESSES1_TEXTBOX, Address1);
 	}	
 	public void inputToAddressesAddress2Textbox(String Address2) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Address2);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_ADDRESSES2_TEXTBOX, Address2);
 	}	
 	public void inputToAddressesZippostalcodeTextbox(String Zippostalcode) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Zippostalcode);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_ZIPPOSTALCODE_TEXTBOX, Zippostalcode);
 	}	
 	public void inputToAddressesPhonenumberTextbox(String Phonenumber) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Phonenumber);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_PHONENUMBER_TEXTBOX, Phonenumber);
 	}
 	public void inputToAddressesFaxnumberTextbox(String Faxnumber) {
-		sendKeysToElement(driver, MyAccountPageUIs.PASSWORD_TEXTBOX, Faxnumber);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_FAXNUMBER_TEXTBOX, Faxnumber);
+	}
+	public void enterToDayDropdown(String value) {
+		selectDropdownByText(driver, MyAccountPageUIs.ADDRESSES_COUNTRYID_SELECT, value);
 	}
 
 }

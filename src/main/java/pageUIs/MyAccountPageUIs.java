@@ -36,5 +36,8 @@ public class MyAccountPageUIs {
 			public static final String ADDRESSES_ZIPPOSTALCODE_TEXTBOX = "//input[@id='Address_ZipPostalCode']";
 			public static final String ADDRESSES_PHONENUMBER_TEXTBOX = "//input[@id='Address_PhoneNumber']";
 			public static final String ADDRESSES_FAXNUMBER_TEXTBOX = "//input[@id='Address_FaxNumber']";
+			
+			public static final String ADDRESSES_COUNTRYID_SELECT = "//select[@id='Address_CountryId']";
+			public static final String ADDRESSES_STATEPROVINCEID_SELECT = "//select[@id='Address_StateProvinceId";
 
 }

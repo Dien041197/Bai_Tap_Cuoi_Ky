@@ -49,6 +49,18 @@ public class TS_03_MyAccount {
 //		myAccountPage.clickToLoginButton();
 		myAccountPage.clickToAddAddressesMenu();
 		myAccountPage.clickToAddAddressesButton();
+		myAccountPage.inputToAddressesFirstnameTextbox("Nguyen");
+		myAccountPage.inputToAddressesFirstnameTextbox("Dien");
+		myAccountPage.inputToAddressesEmailTextbox("anhlavodick113t@gmail.com");
+		myAccountPage.inputToAddressesCompanyTextbox("dien");
+		
+		
+		myAccountPage.inputToAddressesCityTextbox("Binh Duong");
+		myAccountPage.inputToAddressesAddress1Textbox("so 9");
+		myAccountPage.inputToAddressesAddress2Textbox("so 10");
+		myAccountPage.inputToAddressesZippostalcodeTextbox("HCM, 11223");
+		myAccountPage.inputToAddressesPhonenumberTextbox("098761004");
+		myAccountPage.inputToAddressesFaxnumberTextbox("0987610042");
 	}
 	
 	@AfterClass
