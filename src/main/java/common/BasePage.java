@@ -53,8 +53,8 @@ public class BasePage {
 		return findElement(driver, locator).getText();
 	}
 	// xử lý cho dropdown
-    public void selectDropdownByText(WebDriver driver, String locator, String textItem) {
-        select = new Select(getElement(driver, locator));
-        select.selectByVisibleText(textItem);
-    }
+//    public void selectDropdownByText(WebDriver driver, String locator, String textItem) {
+//        select = new Select(getElement(driver, locator));
+//        select.selectByVisibleText(textItem);
+//    }
 }
