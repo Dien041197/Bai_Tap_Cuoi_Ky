@@ -8,9 +8,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import common.BaseTest;
 import pageObjects.LoginPageObject;
 
-public class TS_02_login {
+public class TS_02_login extends BaseTest {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	LoginPageObject loginPage;

@@ -1,11 +1,12 @@
 package com.nopcommerce.demo;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+
 
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
@@ -28,27 +29,27 @@ public class TS_01_Gegister {
     }
     
     @Test
-    public void TC_01() {
+    public void TC_01_RegisterWithEmptyData() {
     	registerPage.refeshCurrentPage(driver);
     	registerPage.clickToRegisterButton();
-    	Assert.assertTrue(registerPage.isFirstNameMessageError("First name is required."));
-    	Assert.assertTrue(registerPage.isLastNameMessageError("Last name is required."));
-    	Assert.assertTrue(registerPage.isEmailMessageError("Email is required."));
-    	Assert.assertTrue(registerPage.isPassWordMessageError("Password is required."));
-    	Assert.assertTrue(registerPage.isConfirmPassWordMessageError("Password is required."));
+    	AssertJUnit.assertTrue(registerPage.isFirstNameMessageError("First name is required."));
+    	AssertJUnit.assertTrue(registerPage.isLastNameMessageError("Last name is required."));
+    	AssertJUnit.assertTrue(registerPage.isEmailMessageError("Email is required."));
+    	AssertJUnit.assertTrue(registerPage.isPassWordMessageError("Password is required."));
+    	AssertJUnit.assertTrue(registerPage.isConfirmPassWordMessageError("Password is required."));
     	  	
     }
     
     @Test
-    public void TC_02() {
+    public void TC_02_RegisterWithInvalidEmail() {
     	registerPage.refeshCurrentPage(driver);
     	registerPage.inputToEmailTextbox("anhlavodick113");
     	registerPage.clickToRegisterButton();
-    	Assert.assertTrue(registerPage.isEmailMessageError("Wrong email"));
+    	AssertJUnit.assertTrue(registerPage.isEmailMessageError("Wrong email"));
     	  	
     }
     @Test
-    public void TC_03() {
+    public void TC_03_RegisterWithExistEmail() {
     	registerPage.refeshCurrentPage(driver);
     	registerPage.clickToMaleGenderCheckbox();
     	registerPage.inputToFisrtNameTextbox("nguyen");
@@ -58,29 +59,29 @@ public class TS_01_Gegister {
     	registerPage.inputToPassWordTextbox("anhlavodick113");
     	registerPage.inputToCompirmPassWordTextbox("anhlavodick113");
     	registerPage.clickToRegisterButton();
-    	Assert.assertTrue(registerPage.isEmailValidationSummaryMessageError("The specified email already exists"));
+    	AssertJUnit.assertTrue(registerPage.isEmailValidationSummaryMessageError("The specified email already exists"));
     	
     }
     @Test
-    public void TC_04() {
+    public void TC_04_RegisterWithPasswordSmallThan6() {
     	registerPage.refeshCurrentPage(driver);
     	registerPage.inputToPassWordTextbox("12345");
     	registerPage.clickToRegisterButton();
-    	Assert.assertTrue(registerPage.isPassWordMessageErrorP("Password must meet the following rules"));
-    	Assert.assertTrue(registerPage.isPassWordMessageErrorUl("must have at least 6 characters"));
+    	AssertJUnit.assertTrue(registerPage.isPassWordMessageErrorP("Password must meet the following rules"));
+    	AssertJUnit.assertTrue(registerPage.isPassWordMessageErrorUl("must have at least 6 characters"));
     	
     }
     @Test
-    public void TC_05() {
+    public void TC_05_RegisterWithPassWordDoesNotMatchWithConfirm() {
     	registerPage.refeshCurrentPage(driver);
     	registerPage.inputToPassWordTextbox("123456");
     	registerPage.inputToCompirmPassWordTextbox("123457");
     	registerPage.clickToRegisterButton();
-    	Assert.assertTrue(registerPage.isConfirmPassWordMessageError("The password and confirmation password do not match."));
+    	AssertJUnit.assertTrue(registerPage.isConfirmPassWordMessageError("The password and confirmation password do not match."));
 
     }
     @Test
-    public void TC_06() {
+    public void TC_06_RegisterSuccess() {
     	registerPage.refeshCurrentPage(driver);
     	registerPage.clickToMaleGenderCheckbox();
     	registerPage.inputToFisrtNameTextbox("nguyen");
@@ -93,7 +94,7 @@ public class TS_01_Gegister {
     	registerPage.inputToPassWordTextbox("anhlavodick113");
     	registerPage.inputToCompirmPassWordTextbox("anhlavodick113");
     	registerPage.clickToRegisterButton();
-    	Assert.assertTrue(registerPage.isConfirmRegisterResultMessage("Your registration completed"));
+    	AssertJUnit.assertTrue(registerPage.isConfirmRegisterResultMessage("Your registration completed"));
     	//loginPage.clickLogout();
     	
     	

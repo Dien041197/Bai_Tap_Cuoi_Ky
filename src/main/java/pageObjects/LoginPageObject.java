@@ -36,4 +36,8 @@ public class LoginPageObject extends BasePage {
 		String message = getTextOfElement(driver, LoginPageUIs.LOGOUT_GO_MENU);
 		return message.contains(value);
 	}
+	public boolean isLoginWithRegisteredEmailAndBlankPasswordErrorMessage(String value) {
+		String message = getTextOfElement(driver, LoginPageUIs.LOGIN_WITH_REGISTERED_EMAIL_BLANK_PASSWORD_ERROR_MESSAGE);
+		return message.equals(value);
+		}
 }

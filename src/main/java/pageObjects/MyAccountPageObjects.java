@@ -1,9 +1,12 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import common.BasePage;
+import pageUIs.LoginPageUIs;
 import pageUIs.MyAccountPageUIs;
+
 public class MyAccountPageObjects extends BasePage {
 	WebDriver driver;
 	public MyAccountPageObjects(WebDriver driver) {
@@ -63,7 +66,7 @@ public class MyAccountPageObjects extends BasePage {
 		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_FIRST_NAME_TEXTBOX, Firstname);
 	}	
 	public void inputToAddressesLastnameTextbox(String Lastname) {
-		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_FIRST_NAME_TEXTBOX, Lastname);
+		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_LAST_NAME_TEXTBOX, Lastname);
 	}	
 	public void inputToAddressesEmailTextbox(String Email) {
 		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_EMAL_TEXTBOX, Email);
@@ -89,8 +92,71 @@ public class MyAccountPageObjects extends BasePage {
 	public void inputToAddressesFaxnumberTextbox(String Faxnumber) {
 		sendKeysToElement(driver, MyAccountPageUIs.ADDRESSES_FAXNUMBER_TEXTBOX, Faxnumber);
 	}
-	public void enterToDayDropdown(String value) {
-		selectDropdownByText(driver, MyAccountPageUIs.ADDRESSES_COUNTRYID_SELECT, value);
+//	public void enterToDayDropdown(String value) {
+//		selectDropdownByText(driver, MyAccountPageUIs.ADDRESSES_COUNTRYID_SELECT, value);
+//	}
+	public void selectTextOfCountryid(String value) {
+		Select select = new Select(findElement(driver, MyAccountPageUIs.ADDRESSES_COUNTRYID_SELECT));
+		select.selectByVisibleText(value);
+	}
+	public void selectTextOfStateProvince(String value) {
+		Select select = new Select(findElement(driver, MyAccountPageUIs.ADDRESSES_STATEPROVINCEID_SELECT));
+		select.selectByVisibleText(value);
+	}
+	public void clickToSaveAddAddressesButton() {
+		clickToElement(driver, MyAccountPageUIs.SAVE_ADDRESS_BUTTON);
+	}
+	public boolean isInfo(String value) {
+		String message = getTextOfElement(driver, MyAccountPageUIs.INFO);
+		return message.contains(value);
+	}
+	public boolean isNameDisplayed (String value) {
+		String message = getTextOfElement(driver, MyAccountPageUIs.NAME_TEXT);
+		return message.equals(value);
+	}
+	
+	public boolean isEmailDisplayed (String value) {
+		String message = getTextOfElement(driver, MyAccountPageUIs.EMAIL_TEXT);
+		return message.equals(value);
+	}
+	
+	public boolean isPhoneNumberDisplayed(String value) {
+		String message = getTextOfElement(driver, MyAccountPageUIs.PHONE_NUMBER_TEXT);
+		return message.equals(value);
+	}
+	
+	public boolean isAddress1Displayed(String value) {
+		String message = getTextOfElement(driver, MyAccountPageUIs.ADDRESS_1_TEXT);
+		return message.equals(value);
+	}
+	
+	public boolean isCityZipCodeDisplayed(String value) {
+		String message = getTextOfElement(driver,MyAccountPageUIs.CITY_ZIP_CODE_TEXT);
+		return message.equals(value);
+	}
+	
+	public boolean isCountryDisplayed(String value) {
+		String message = getTextOfElement(driver, MyAccountPageUIs.COUNTRY_TEXT);
+		return message.equals(value);
+	}
+	public void clickToChangePasswordTab() {
+		clickToElement(driver, MyAccountPageUIs.CHANGE_PASSWORD_TAB);
+	}
+	
+	public void inputOldPasswordTextbox(String oldPassword) {
+		sendKeysToElement(driver, MyAccountPageUIs.OLD_PASSWORD_TEXTBOX, oldPassword);
+	}
+	
+	public void inputToNewPasswordTextbox(String newPassword) {
+		sendKeysToElement(driver, MyAccountPageUIs.NEW_PASSWORD_TEXTBOX, newPassword);
+	}
+	
+	public void inputToConfirmPasswordTextbox(String confirmPassword) {
+		sendKeysToElement(driver, MyAccountPageUIs.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
+	}
+	
+	public void clickToChangePasswordButton() {
+		clickToElement(driver, MyAccountPageUIs.CHANGE_PASSWORD_BUTTON);
 	}
 
 }
